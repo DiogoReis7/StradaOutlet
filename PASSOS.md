@@ -30,4 +30,4 @@ Não adicionar integrações. Ao mudar variáveis: Redeploy sem cache.
 
 ## Notas
 - Gestor de loja excluído das contas do PDS: `bmemartins` (src/lib/manager.ts).
-- Metas do Quadro IOS (src/routes/_authenticated/quadro-ios.tsx) são as da Loures: ajustar à Strada.
+- Metas do Quadro IOS (src/routes/_authenticated/quadro-ios.tsx) são as da Loures: ajustar à Strada. 
