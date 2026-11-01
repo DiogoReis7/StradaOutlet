@@ -1,0 +1,23 @@
+{
+  "name": "Loja PDS · Strada Outlet",
+  "short_name": "Loja PDS",
+  "description": "Ponto de Situação e vendas da loja NOS Strada Outlet",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b0f1c",
+  "theme_color": "#0b0f1c",
+  "lang": "pt-PT",
+  "categories": ["business", "productivity"],
+  "icons": [
+    { "src": "/app-icon-20260920-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/app-icon-20260920-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/app-icon-20260920-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "PDS", "short_name": "PDS", "url": "/pds", "icons": [{ "src": "/app-icon-20260920-192.png", "sizes": "192x192", "type": "image/png" }] },
+    { "name": "Individuais", "short_name": "Indiv.", "url": "/individual" },
+    { "name": "Pesquisa", "short_name": "Pesquisa", "url": "/pesquisa" }
+  ]
+}

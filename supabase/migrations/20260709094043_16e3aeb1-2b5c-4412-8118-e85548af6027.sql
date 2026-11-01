@@ -1,0 +1,3 @@
+ALTER TABLE public.nps_surveys 
+  ADD COLUMN IF NOT EXISTS tipo TEXT,
+  ADD COLUMN IF NOT EXISTS nota_pessoa INTEGER;

@@ -1,0 +1,1 @@
+ALTER TABLE public.employees ADD COLUMN IF NOT EXISTS objetivo_mes TEXT, ADD COLUMN IF NOT EXISTS notas TEXT;

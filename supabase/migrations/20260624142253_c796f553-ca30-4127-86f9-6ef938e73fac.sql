@@ -1,0 +1,1 @@
+GRANT SELECT (username_sgf, nome_sgf) ON public.employees TO anon;

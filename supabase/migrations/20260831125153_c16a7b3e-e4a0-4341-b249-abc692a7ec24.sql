@@ -1,0 +1,10 @@
+REVOKE EXECUTE ON FUNCTION public.admin_get_employee_nifs() FROM PUBLIC, anon;
+REVOKE EXECUTE ON FUNCTION public.admin_set_employee_nif(uuid, bigint) FROM PUBLIC, anon;
+REVOKE EXECUTE ON FUNCTION public.current_employee_id() FROM PUBLIC, anon;
+REVOKE EXECUTE ON FUNCTION public.match_employees_by_nifs(bigint[]) FROM PUBLIC, anon;
+REVOKE EXECUTE ON FUNCTION public.set_employee_categorias_by_nif(jsonb) FROM PUBLIC, anon;
+GRANT EXECUTE ON FUNCTION public.admin_get_employee_nifs() TO authenticated;
+GRANT EXECUTE ON FUNCTION public.admin_set_employee_nif(uuid, bigint) TO authenticated;
+GRANT EXECUTE ON FUNCTION public.current_employee_id() TO authenticated;
+GRANT EXECUTE ON FUNCTION public.match_employees_by_nifs(bigint[]) TO authenticated;
+GRANT EXECUTE ON FUNCTION public.set_employee_categorias_by_nif(jsonb) TO authenticated;
