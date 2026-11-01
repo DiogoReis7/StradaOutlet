@@ -90,8 +90,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary" },
       { name: "twitter:title", content: "NOS Strada Outlet — Vendas & SGF" },
       { name: "twitter:description", content: "Painel interno da loja NOS Strada Outlet: registo de vendas, SGF e horários." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/856ccb5b-0321-4068-9952-b4b506a514ee/id-preview-1fd74c79--60c72c5c-15d8-4101-a2b6-6528fb7c1c84.lovable.app-1782306269492.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/856ccb5b-0321-4068-9952-b4b506a514ee/id-preview-1fd74c79--60c72c5c-15d8-4101-a2b6-6528fb7c1c84.lovable.app-1782306269492.png" },
       { name: "theme-color", content: "#0b0f1c" },
       { name: "apple-mobile-web-app-capable", content: "yes" },
       { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
