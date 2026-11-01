@@ -18,7 +18,6 @@ export const Route = createFileRoute("/_authenticated/colaboradores")({
 
 const EMP_COLS = "id,nome,slug,username_sgf,nome_sgf,ativo,ordem,categoria,objetivo_mes,notas";
 
-const CATEGORIAS = ["Móvel", "Fixo", "TVs", "Marcações", "Mais Negócios", "Alarme", "Energia", "Acessórios", "Seguros"];
 
 function slugify(s: string) {
   return s.normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
@@ -164,15 +163,14 @@ function ColaboradoresPage() {
                 inputMode="numeric"
                 className="rounded-md border bg-background px-3 py-2 text-sm" />
             )}
-            <input list="cat-list" value={categoria} onChange={(e) => setCategoria(e.target.value)} placeholder="Categoria"
+            <input value={categoria} onChange={(e) => setCategoria(e.target.value)} placeholder="Categoria (opcional)"
               className="rounded-md border bg-background px-3 py-2 text-sm" />
-            <datalist id="cat-list">{CATEGORIAS.map((c) => <option key={c} value={c} />)}</datalist>
             <button onClick={add} className="inline-flex items-center justify-center gap-1.5 rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground hover:opacity-90">
               <Plus className="h-4 w-4" /> Adicionar
             </button>
           </div>
           <p className="mt-2 text-[11px] text-muted-foreground">
-            A <b>Categoria</b> aparece à frente do nome no PDS e na página individual. O <b>Username SGF</b> emparelha as senhas SGF{isAdmin && <> · O <b>NIF</b> é necessário para emparelhar com a Sisqual</>}.
+            A <b>Categoria</b> é opcional (é preenchida com a categoria da Sisqual) e aparece à frente do nome no PDS e na página individual. O <b>Username SGF</b> emparelha as senhas SGF{isAdmin && <> · O <b>NIF</b> é necessário para emparelhar com a Sisqual</>}.
           </p>
         </div>
 
@@ -207,7 +205,7 @@ function ColaboradoresPage() {
                     </td>
                     <td className="px-3 py-2 text-xs">
                       {editing ? (
-                        <input list="cat-list" value={editCategoria} onChange={(ev) => setEditCategoria(ev.target.value)}
+                        <input value={editCategoria} onChange={(ev) => setEditCategoria(ev.target.value)}
                           className="w-32 rounded border bg-background px-2 py-1 text-xs" />
                       ) : e.categoria ? (
                         <span className="inline-flex items-center rounded-full bg-[color:var(--brand-orange)]/10 px-2 py-0.5 text-[11px] font-medium text-[color:var(--brand-orange)]">{e.categoria}</span>
