@@ -16,7 +16,7 @@ export const adminListUsers = createServerFn({ method: "POST" })
 
 export const adminCreateUser = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: { username: string; password: string }) => d)
+  .validator((d: { username: string; password: string }) => d)
   .handler(async ({ data, context }) => {
     await assertAdmin(context.supabase, context.userId);
     if (!data.password || data.password.length < 6) throw new Error("Password precisa de 6+ caracteres");
@@ -33,7 +33,7 @@ export const adminCreateUser = createServerFn({ method: "POST" })
 
 export const adminSetPassword = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: { userId: string; password: string }) => d)
+  .validator((d: { userId: string; password: string }) => d)
   .handler(async ({ data, context }) => {
     await assertAdmin(context.supabase, context.userId);
     if (!data.password || data.password.length < 6) throw new Error("Password precisa de 6+ caracteres");
@@ -47,7 +47,7 @@ export const adminSetPassword = createServerFn({ method: "POST" })
 
 export const adminSetUsername = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: { userId: string; username: string }) => d)
+  .validator((d: { userId: string; username: string }) => d)
   .handler(async ({ data, context }) => {
     await assertAdmin(context.supabase, context.userId);
     const email = usernameToEmail(data.username);
@@ -62,7 +62,7 @@ export const adminSetUsername = createServerFn({ method: "POST" })
 
 export const adminSetUserDisabled = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: { userId: string; disabled: boolean }) => d)
+  .validator((d: { userId: string; disabled: boolean }) => d)
   .handler(async ({ data, context }) => {
     await assertAdmin(context.supabase, context.userId);
     if (data.userId === context.userId) throw new Error("Não podes desativar a tua própria conta");
@@ -76,7 +76,7 @@ export const adminSetUserDisabled = createServerFn({ method: "POST" })
 
 export const adminDeleteUser = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: { userId: string }) => d)
+  .validator((d: { userId: string }) => d)
   .handler(async ({ data, context }) => {
     await assertAdmin(context.supabase, context.userId);
     if (data.userId === context.userId) throw new Error("Não podes eliminar a tua própria conta");
@@ -89,7 +89,7 @@ export const adminDeleteUser = createServerFn({ method: "POST" })
 /** Concede ou remove permissões de administrador (Gestor de Loja). */
 export const adminSetRole = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: { userId: string; admin: boolean }) => d)
+  .validator((d: { userId: string; admin: boolean }) => d)
   .handler(async ({ data, context }) => {
     await assertAdmin(context.supabase, context.userId);
     if (data.userId === context.userId && !data.admin) {
@@ -115,7 +115,7 @@ export const adminSetRole = createServerFn({ method: "POST" })
 /** Cria (ou repõe) a conta do Gestor de Loja com permissões de administrador. */
 export const adminEnsureManager = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: { username?: string; password?: string }) => d)
+  .validator((d: { username?: string; password?: string }) => d)
   .handler(async ({ data, context }) => {
     await assertAdmin(context.supabase, context.userId);
     const username = (data.username || "gestor").trim().toLowerCase();
