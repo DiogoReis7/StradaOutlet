@@ -1,0 +1,770 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Space Grotesk", "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* === Strada Outlet × NOS · Neon Dark ===
+   Paleta inspirada nos pacotes NOS (Net/TV/Voz/Móvel) e parceria Combina.
+*/
+:root {
+  --radius: 0.7rem;
+
+  /* Cores por categoria de produto — tons suavizados, menos dispersos */
+  --neon-green:  #5eead4;  /* Net / fibra */
+  --neon-yellow: #fbbf24;  /* TV */
+  --neon-pink:   #f472b6;  /* Voz / Continente */
+  --neon-blue:   #38bdf8;  /* Móvel / 5G */
+  --neon-orange: #fb923c;  /* Energia · Galp */
+  --neon-red:    #fb7185;  /* Alarme */
+  --neon-violet: #a5b4fc;  /* Marcações / Seguros */
+
+  /* Cores oficiais da parceria COMBINA (NOS + Galp + Continente) */
+  --combina-nos:        #1d1d1b;  /* NOS — preto/carvão */
+  --combina-galp:        #f47920;  /* Galp — laranja */
+  --combina-continente:  #e3000f;  /* Continente — vermelho */
+
+
+  /* Brand aliases (mantém compatibilidade com código existente) */
+  --brand-orange: var(--neon-orange);
+  --brand-blue:   var(--neon-blue);
+
+  /* Quadro IOS (paleta do Excel) */
+  --ios-brick: #b94327;
+  --ios-peach: #f7c4b3;
+  --ios-mint:  #c8efd3;
+  --ios-green: #6cd28b;
+
+  /* Superfícies — escuro com tom de carvão azulado */
+  --background: oklch(0.14 0.02 265);
+  --foreground: oklch(0.98 0.005 250);
+  --card: oklch(0.19 0.025 265);
+  --card-foreground: oklch(0.98 0.005 250);
+  --popover: oklch(0.19 0.025 265);
+  --popover-foreground: oklch(0.98 0.005 250);
+
+  --primary: oklch(0.74 0.12 210);              /* azul suave */
+  --primary-foreground: oklch(0.12 0.03 265);
+  --secondary: oklch(0.24 0.03 265);
+  --secondary-foreground: oklch(0.97 0 0);
+  --muted: oklch(0.22 0.025 265);
+  --muted-foreground: oklch(0.72 0.02 250);
+  --accent: oklch(0.26 0.04 305);
+  --accent-foreground: oklch(0.97 0 0);
+  --destructive: oklch(0.64 0.16 20);
+  --destructive-foreground: oklch(0.99 0 0);
+  --success: oklch(0.78 0.14 152);
+  --warning: oklch(0.82 0.12 90);
+
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.74 0.12 210);
+
+  --chart-1: oklch(0.78 0.14 152);
+  --chart-2: oklch(0.74 0.12 210);
+  --chart-3: oklch(0.82 0.12 90);
+  --chart-4: oklch(0.68 0.16 0);
+  --chart-5: oklch(0.68 0.14 305);
+
+  --sidebar: oklch(0.12 0.02 265);
+  --sidebar-foreground: oklch(0.97 0.005 250);
+  --sidebar-primary: oklch(0.74 0.12 210);
+  --sidebar-primary-foreground: oklch(0.1 0.02 265);
+  --sidebar-accent: oklch(0.22 0.03 265);
+  --sidebar-accent-foreground: oklch(0.97 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.74 0.12 210);
+}
+
+.dark { color-scheme: dark; }
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image:
+      radial-gradient(800px 500px at 100% -100px, color-mix(in oklab, var(--neon-blue) 5%, transparent), transparent 60%),
+      radial-gradient(900px 600px at -10% 110%, color-mix(in oklab, var(--neon-pink) 4%, transparent), transparent 60%);
+    background-attachment: fixed;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.015em;
+  }
+  /* Números alinhados em tabelas e KPIs */
+  table, .tabular { font-variant-numeric: tabular-nums; }
+
+  ::selection {
+    background: color-mix(in oklab, var(--ring) 35%, transparent);
+    color: var(--foreground);
+  }
+
+  /* Scrollbars discretas e coerentes com o tema */
+  * { scrollbar-width: thin; scrollbar-color: color-mix(in oklab, var(--ring) 40%, transparent) transparent; }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: color-mix(in oklab, var(--ring) 30%, transparent);
+    border: 3px solid transparent;
+    background-clip: content-box;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: color-mix(in oklab, var(--ring) 55%, transparent); background-clip: content-box; }
+}
+
+/* Entrada suave do conteúdo de cada página */
+@keyframes app-fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+main > * { animation: app-fade-in 0.24s ease-out both; }
+
+/* Entrada sequencial (stagger) para grelhas de cartões */
+.stagger > * { animation: app-fade-in 0.28s ease-out both; }
+.stagger > *:nth-child(1) { animation-delay: 0.02s; }
+.stagger > *:nth-child(2) { animation-delay: 0.05s; }
+.stagger > *:nth-child(3) { animation-delay: 0.08s; }
+.stagger > *:nth-child(4) { animation-delay: 0.11s; }
+.stagger > *:nth-child(5) { animation-delay: 0.14s; }
+.stagger > *:nth-child(6) { animation-delay: 0.17s; }
+.stagger > *:nth-child(7) { animation-delay: 0.20s; }
+.stagger > *:nth-child(8) { animation-delay: 0.23s; }
+.stagger > *:nth-child(n+9) { animation-delay: 0.26s; }
+
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  main > * { animation: none; }
+  .stagger > * { animation: none; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+
+/* Utilitários neon */
+@utility neon-ring {
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, currentColor 45%, transparent);
+}
+
+/* Badge neon legível em qualquer tema: texto = foreground; a cor neon
+   entra no ícone, borda e brilho via currentColor (definido em style). */
+@utility neon-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 9999px;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  color: var(--foreground);
+  background: color-mix(in oklab, currentColor 12%, var(--background));
+  border: 1px solid color-mix(in oklab, currentColor 40%, transparent);
+}
+
+/* Foco neon uniforme — usa a cor "ring" do tema ativo. */
+@utility focus-neon {
+  outline: none;
+  &:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 2px var(--background),
+      0 0 0 4px color-mix(in oklab, var(--ring) 70%, transparent);
+    border-radius: inherit;
+  }
+}
+
+/* Hover suave — herda do tema (ring/primary) em vez de azul fixo. */
+@utility hover-neon {
+  transition: background-color .15s ease, box-shadow .15s ease, border-color .15s ease, transform .15s ease, opacity .15s ease;
+  &:hover {
+    background-color: color-mix(in oklab, var(--ring) 8%, transparent);
+    border-color: color-mix(in oklab, var(--ring) 35%, transparent);
+  }
+  &:active { transform: scale(0.985); }
+  &[aria-disabled="true"], &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    box-shadow: none;
+    background-color: transparent;
+  }
+}
+
+/* Estado desativado coerente (ícones / chips inertes) */
+@utility neon-disabled {
+  opacity: 0.4;
+  filter: grayscale(0.6);
+  cursor: not-allowed;
+}
+
+/* Quadro IOS — Modo Print */
+.quadro-ios.print-mode {
+  height: 100vh;
+  overflow: hidden;
+  background: #fff;
+}
+.quadro-ios.print-mode table { font-size: 11px; }
+.quadro-ios.print-mode td { padding: 2px 6px !important; }
+
+/* PDS — adapta-se totalmente ao ecrã, sem scroll na página (só a lista
+   de vendedores desliza por dentro, se não couber tudo). */
+.pds-scroll { width: 100%; height: 100%; display: flex; flex-direction: column; overflow: hidden; padding: 0; }
+.pds-frame { width: 100%; height: 100%; display: flex; flex-direction: column; max-width: none; margin: 0; position: relative; isolation: isolate; overflow: hidden; }
+.pds-grid { display: flex; flex-direction: column; gap: 0.25rem; flex: 1; overflow-y: auto; overflow-x: hidden; }
+.pds-rotate-hint { display: none; }
+.pds-neon-word { color: color-mix(in oklab, var(--foreground) 88%, var(--neon-blue)); font-weight: 700 !important; font-size: clamp(1.35rem, 4.2vw, 1.9rem); letter-spacing: 0.03em; }
+
+@media (max-width: 767px) {
+  .pds-frame { padding: 0.35rem; box-sizing: border-box; }
+  .pds-neon-word { font-size: clamp(0.9rem, 4vw, 1.35rem); letter-spacing: 0.02em; }
+  .pds-frame > div:first-child { margin-bottom: 0.25rem; }
+  .pds-frame [class*="px-3\.5"], .pds-frame [class*="px-3"] { padding-left: 0.5rem !important; padding-right: 0.5rem !important; }
+  .pds-frame [class*="py-3"], .pds-frame [class*="py-2"] { padding-top: 0.35rem !important; padding-bottom: 0.35rem !important; }
+  .pds-frame .text-xl, .pds-frame .text-\[1\.5rem\] { font-size: 0.85rem !important; }
+  .pds-frame .text-\[10px\], .pds-frame .text-\[11px\], .pds-frame .text-\[9px\] { font-size: 0.65rem !important; }
+  .pds-frame table { font-size: 0.65rem !important; }
+  .pds-frame .gap-2 { gap: 0.2rem !important; }
+  .pds-frame .space-y-2 > * + * { margin-top: 0.2rem !important; }
+}
+
+@media (min-width: 640px) { .pds-neon-word { font-size: clamp(2.5rem, 6vw, 3.6rem); letter-spacing: 0.1em; } }
+@media (min-width: 1024px) {
+  .pds-frame { width: 1280px; }
+  .pds-grid { gap: 0.75rem; }
+  .pds-neon-word { font-size: clamp(3.4rem, 6.2vw, 5rem); letter-spacing: 0.16em; }
+}
+
+.pds-frame[data-capture="true"] { width: 1280px !important; min-height: 720px; margin-inline: auto; height: auto; }
+.pds-frame[data-capture="true"] .pds-grid { display: flex !important; flex-direction: column !important; gap: 0.75rem !important; overflow: visible !important; }
+.pds-frame[data-capture="true"] .pds-neon-word { font-size: 2.4rem; letter-spacing: 0.05em; animation: none !important; }
+.pds-frame[data-capture="true"] .cap-grid-6 { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+.pds-frame[data-capture="true"] .cap-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+.pds-frame[data-capture="true"] .cap-label-full { display: inline !important; }
+.pds-frame[data-capture="true"] .cap-label-short { display: none !important; }
+
+/* 1 — Palco do letreiro: brilho pulsante + reflexo no "chão" */
+@keyframes pds-stage-kf {
+  0%, 100% { opacity: .45; transform: translateX(-50%) scale(1); }
+  50%      { opacity: .85; transform: translateX(-50%) scale(1.12); }
+}
+.pds-brand { position: relative; }
+.pds-brand-reflection { display: none; }
+
+/* 8 — Fundo com grelha + partículas subtis */
+.pds-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(color-mix(in oklab, var(--neon-blue) 8%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--neon-blue) 8%, transparent) 1px, transparent 1px),
+    radial-gradient(circle at 18% 22%, color-mix(in oklab, var(--neon-pink) 12%, transparent), transparent 45%),
+    radial-gradient(circle at 82% 78%, color-mix(in oklab, var(--neon-blue) 12%, transparent), transparent 45%);
+  background-size: 44px 44px, 44px 44px, 100% 100%, 100% 100%;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 92%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 92%);
+  pointer-events: none;
+}
+
+/* 4 — Linha divisória animada */
+@keyframes neon-divider-kf { to { background-position: 220% 0; } }
+@utility neon-divider {
+  height: 2px;
+  border-radius: 9999px;
+  background-image: linear-gradient(90deg,
+    transparent,
+    color-mix(in oklab, var(--neon-blue) 85%, transparent),
+    color-mix(in oklab, var(--neon-pink) 85%, transparent),
+    transparent);
+  background-size: 220% 100%;
+  animation: neon-divider-kf 3.4s linear infinite;
+}
+
+/* 5 — Card Combina "estrela" */
+@utility combina-star { box-shadow: none; }
+
+
+
+
+
+/* === Variantes de tema (selecionáveis pelo utilizador) === */
+:root[data-theme="midnight"] {
+  /* Azul-ardósia frio, muito suave */
+  --neon-blue:   #93c5fd;
+  --neon-pink:   #c4b5fd;
+  --neon-green:  #67e8f9;
+  --neon-orange: #fcd34d;
+  --neon-violet: #a5b4fc;
+  --background: oklch(0.15 0.02 260);
+  --card: oklch(0.20 0.02 260);
+  --sidebar: oklch(0.13 0.02 260);
+  --primary: oklch(0.72 0.09 260);
+  --ring: oklch(0.72 0.09 260);
+  --sidebar-primary: oklch(0.72 0.09 260);
+}
+:root[data-theme="oceano"] {
+  /* Azul-petróleo profundo, acento ciano bem vivo */
+  --neon-blue:   #22d3ee;
+  --neon-pink:   #818cf8;
+  --neon-green:  #2dd4bf;
+  --neon-orange: #fb923c;
+  --neon-violet: #60a5fa;
+  --background: oklch(0.14 0.03 220);
+  --card: oklch(0.19 0.035 220);
+  --sidebar: oklch(0.12 0.03 220);
+  --primary: oklch(0.75 0.14 195);
+  --ring: oklch(0.75 0.14 195);
+  --sidebar-primary: oklch(0.75 0.14 195);
+}
+:root[data-theme="ambar"] {
+  /* Castanho quente, acento âmbar bem vivo */
+  --neon-blue:   #fbbf24;
+  --neon-pink:   #fb923c;
+  --neon-green:  #facc15;
+  --neon-orange: #f87171;
+  --neon-violet: #fdba74;
+  --background: oklch(0.15 0.025 60);
+  --card: oklch(0.20 0.03 60);
+  --sidebar: oklch(0.12 0.025 60);
+  --primary: oklch(0.78 0.14 70);
+  --primary-foreground: oklch(0.15 0.025 60);
+  --ring: oklch(0.78 0.14 70);
+  --sidebar-primary: oklch(0.78 0.14 70);
+}
+
+/* Esmeralda — único tema que se mantém (com ajustes) tanto em modo
+   escuro como em modo claro. Variante escura: */
+:root[data-theme="esmeralda"] {
+  --neon-blue:   #34d399;
+  --neon-pink:   #f472b6;
+  --neon-green:  #a3e635;
+  --neon-orange: #fb923c;
+  --neon-violet: #38bdf8;
+  --background: oklch(0.15 0.025 155);
+  --card: oklch(0.20 0.03 155);
+  --sidebar: oklch(0.12 0.025 155);
+  --primary: oklch(0.72 0.13 155);
+  --ring: oklch(0.72 0.13 155);
+  --sidebar-primary: oklch(0.72 0.13 155);
+}
+/* Esmeralda — variante clara (usada quando o modo é Claro): */
+:root[data-theme="esmeralda"]:not(.dark) {
+  --neon-blue:   #059669;
+  --neon-pink:   #db2777;
+  --neon-green:  #15803d;
+  --neon-orange: #ea580c;
+  --neon-violet: #0891b2;
+  --background: oklch(0.99 0.01 155);
+  --foreground: oklch(0.18 0.03 155);
+  --card: oklch(1 0 0.0001 155);
+  --card-foreground: oklch(0.18 0.03 155);
+  --popover: oklch(1 0 0.0001 155);
+  --popover-foreground: oklch(0.18 0.03 155);
+  --muted: oklch(0.96 0.015 155);
+  --muted-foreground: oklch(0.42 0.03 155);
+  --accent: oklch(0.93 0.03 155);
+  --accent-foreground: oklch(0.18 0.03 155);
+  --secondary: oklch(0.93 0.03 155);
+  --secondary-foreground: oklch(0.18 0.03 155);
+  --border: oklch(0.18 0.03 155 / 14%);
+  --input: oklch(0.18 0.03 155 / 18%);
+  --primary: oklch(0.48 0.13 155);
+  --primary-foreground: oklch(0.99 0 0);
+  --ring: oklch(0.46 0.13 155);
+  --success: oklch(0.5 0.14 152);
+  --warning: oklch(0.58 0.14 75);
+  --destructive: oklch(0.55 0.21 25);
+  --sidebar: oklch(0.975 0.012 155);
+  --sidebar-foreground: oklch(0.2 0.03 155);
+  --sidebar-primary: oklch(0.48 0.13 155);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.93 0.03 155);
+  --sidebar-accent-foreground: oklch(0.18 0.03 155);
+  --sidebar-border: oklch(0.18 0.03 155 / 12%);
+  --chart-1: oklch(0.5 0.14 152);
+  --chart-2: oklch(0.48 0.13 155);
+  --chart-3: oklch(0.58 0.14 75);
+  --chart-4: oklch(0.55 0.21 10);
+  --chart-5: oklch(0.52 0.12 195);
+}
+:root[data-theme="esmeralda"]:not(.dark) .neon-text { text-shadow: none; }
+:root[data-theme="esmeralda"]:not(.dark) .kpi-neon { text-shadow: none; }
+:root[data-theme="esmeralda"]:not(.dark) .neon-badge { color: var(--foreground); }
+
+:root[data-theme="light"] {
+  --neon-blue:   #2563eb;
+  --neon-pink:   #db2777;
+  --neon-green:  #059669;
+  --neon-orange: #ea580c;
+  --neon-violet: #7c3aed;
+  --neon-yellow: #ca8a04;
+  --neon-red:    #dc2626;
+  --background: oklch(0.99 0.005 250);
+  --foreground: oklch(0.18 0.02 265);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 265);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 265);
+  --muted: oklch(0.96 0.01 250);
+  --muted-foreground: oklch(0.45 0.02 260);
+  --accent: oklch(0.94 0.02 260);
+  --accent-foreground: oklch(0.18 0.02 265);
+  --secondary: oklch(0.94 0.02 260);
+  --secondary-foreground: oklch(0.18 0.02 265);
+  --border: oklch(0.18 0.02 265 / 12%);
+  --input: oklch(0.18 0.02 265 / 14%);
+  --primary: oklch(0.58 0.2 250);
+  --primary-foreground: oklch(0.99 0 0);
+  --ring: oklch(0.58 0.2 250);
+  --sidebar: oklch(0.98 0.005 250);
+  --sidebar-foreground: oklch(0.2 0.02 265);
+  --sidebar-primary: oklch(0.58 0.2 250);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.94 0.02 260);
+  --sidebar-accent-foreground: oklch(0.18 0.02 265);
+  --sidebar-border: oklch(0.18 0.02 265 / 10%);
+}
+:root[data-theme="light"] body {
+  background-image:
+    radial-gradient(800px 500px at 100% -100px, color-mix(in oklab, var(--neon-blue) 10%, transparent), transparent 60%),
+    radial-gradient(900px 600px at -10% 110%, color-mix(in oklab, var(--neon-pink) 8%, transparent), transparent 60%);
+}
+
+/* ===== Melhorias visuais globais =====
+   1) Fundo aurora animado  2) Glass cards  3) KPIs neon
+   4) Micro-interações      5) Leaderboard estilo esports */
+
+/* 1 — Aurora ambiente (por cima do fundo, atrás do conteúdo) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -20vmax;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(38vmax 28vmax at 18% 22%, color-mix(in oklab, var(--neon-blue) 20%, transparent), transparent 65%),
+    radial-gradient(34vmax 26vmax at 82% 12%, color-mix(in oklab, var(--neon-orange) 14%, transparent), transparent 65%),
+    radial-gradient(40vmax 30vmax at 60% 92%, color-mix(in oklab, var(--neon-pink) 14%, transparent), transparent 65%);
+  filter: blur(28px) saturate(120%);
+  opacity: 0.65;
+  animation: aurora-drift 28s ease-in-out infinite alternate;
+}
+@keyframes aurora-drift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(2%, -2%, 0) scale(1.06); }
+  100% { transform: translate3d(-2%, 2%, 0) scale(1.02); }
+}
+
+/* 2 — Glass card */
+@utility glass-card {
+  background: color-mix(in oklab, var(--card) 62%, transparent);
+  backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid color-mix(in oklab, var(--foreground) 10%, transparent);
+  box-shadow:
+    0 1px 0 0 color-mix(in oklab, var(--foreground) 8%, transparent) inset,
+    0 12px 32px -18px rgb(0 0 0 / 0.8);
+}
+
+/* 3 — KPI neon (números grandes com brilho da cor corrente) */
+@utility kpi-neon {
+  font-variant-numeric: tabular-nums;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+/* 4 — Micro-interações */
+@utility press {
+  transition: transform .14s ease, box-shadow .18s ease, opacity .14s ease;
+  &:active { transform: scale(0.97); }
+}
+@utility lift {
+  transition: transform .18s cubic-bezier(.2,.8,.3,1), box-shadow .18s ease, border-color .18s ease;
+  &:hover { transform: translateY(-3px); }
+}
+@keyframes alert-pulse-kf {
+  0%, 100% { box-shadow: 0 0 12px color-mix(in oklab, var(--destructive) 25%, transparent); }
+  50%      { box-shadow: 0 0 26px color-mix(in oklab, var(--destructive) 60%, transparent); }
+}
+@utility alert-pulse {
+  animation: alert-pulse-kf 2.4s ease-in-out infinite;
+}
+@keyframes shimmer-kf { to { background-position: 200% 0; } }
+@utility shimmer {
+  background-image: linear-gradient(100deg, transparent 20%, color-mix(in oklab, var(--foreground) 12%, transparent) 40%, transparent 60%);
+  background-size: 200% 100%;
+  animation: shimmer-kf 2.2s linear infinite;
+}
+
+/* 5 — Leaderboard (Modo TV / Quiosque) */
+@utility champion-glow { filter: drop-shadow(0 0 8px color-mix(in oklab, var(--neon-yellow) 45%, transparent)); }
+
+@utility lb-row {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border: 1px solid color-mix(in oklab, currentColor 30%, transparent);
+  background: linear-gradient(90deg, color-mix(in oklab, currentColor 10%, transparent), transparent 65%);
+}
+@utility lb-avatar {
+  display: grid;
+  place-items: center;
+  border-radius: 9999px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  color: currentColor;
+  background: color-mix(in oklab, currentColor 18%, transparent);
+  border: 2px solid color-mix(in oklab, currentColor 55%, transparent);
+}
+
+@keyframes confetti-fall {
+  0% { opacity: 0; transform: translate3d(0, -8vh, 0) rotate(0deg); }
+  10% { opacity: 1; }
+  100% { opacity: 0; transform: translate3d(14vw, 112vh, 0) rotate(680deg); }
+}
+.confetti-piece {
+  position: absolute;
+  top: -10vh;
+  width: 8px;
+  height: 15px;
+  border-radius: 2px;
+  animation: confetti-fall 1.8s cubic-bezier(.2,.7,.3,1) both;
+}
+
+/* ===== Pack visual (10 melhorias) ===== */
+
+/* 1 — Modo foco no PDS: destaca o cartão tocado e escurece os restantes */
+.focus-dim {
+  opacity: 0.28;
+  filter: saturate(0.5) blur(0.6px);
+  transition: opacity .25s ease, filter .25s ease, transform .25s ease;
+}
+.focus-on {
+  transform: scale(1.015);
+  z-index: 2;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+/* 3 — Medalhas flutuantes */
+@keyframes medal-float-kf {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-3px); }
+}
+@utility medal-float { animation: medal-float-kf 2.6s ease-in-out infinite; }
+
+/* 4 — Transição de entrada mais suave entre páginas */
+@keyframes page-in-kf {
+  from { opacity: 0; transform: translateY(10px) scale(0.995); }
+  to   { opacity: 1; transform: none; }
+}
+main > * { animation: page-in-kf 0.3s cubic-bezier(.2,.8,.3,1) both; }
+
+/* 5 — Skeletons com brilho coerente */
+@utility skeleton-neon {
+  border-radius: 0.5rem;
+  background: linear-gradient(100deg,
+    color-mix(in oklab, var(--card) 80%, transparent) 20%,
+    color-mix(in oklab, var(--foreground) 10%, transparent) 40%,
+    color-mix(in oklab, var(--card) 80%, transparent) 60%);
+  background-size: 200% 100%;
+  animation: shimmer-kf 1.8s linear infinite;
+}
+
+/* 5 — Estados vazios claros, sem criar mais um cartão dentro da secção */
+.vendor-empty {
+  display: flex;
+  min-height: 4.5rem;
+  align-items: center;
+  justify-content: center;
+  gap: .65rem;
+  padding: 1rem;
+  border: 1px dashed color-mix(in oklab, var(--neon-blue) 28%, var(--border));
+  border-radius: .5rem;
+  background: color-mix(in oklab, var(--neon-blue) 5%, transparent);
+}
+
+/* 6 — Títulos das secções mais nítidos, mantendo o espaço compacto do PDS */
+.section-title-neon {
+  text-shadow: none;
+}
+
+/* 6 — Ícones e botões com brilho no hover */
+@utility icon-hover-glow {
+  transition: filter .18s ease, transform .18s ease;
+  &:hover { filter: drop-shadow(0 0 8px color-mix(in oklab, currentColor 70%, transparent)); transform: translateY(-1px); }
+}
+
+/* 7 — Toasts com cor neon */
+[data-sonner-toast] {
+  backdrop-filter: blur(12px) saturate(150%);
+  border-width: 1px !important;
+}
+[data-sonner-toast][data-type="success"] { box-shadow: 0 0 20px color-mix(in oklab, var(--success) 30%, transparent); }
+[data-sonner-toast][data-type="error"]   { box-shadow: 0 0 20px color-mix(in oklab, var(--destructive) 32%, transparent); }
+[data-sonner-toast][data-type="info"]    { box-shadow: 0 0 20px color-mix(in oklab, var(--neon-blue) 30%, transparent); }
+
+/* 8 — Dark mode refinado: evitar "caixas dentro de caixas" */
+.glass-card .glass-card {
+  background: color-mix(in oklab, var(--card) 34%, transparent);
+  border-color: color-mix(in oklab, var(--foreground) 7%, transparent);
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+/* 9 — Contador COMBINA: salto ao subir */
+@keyframes combina-pop-kf {
+  0%   { transform: scale(1); }
+  35%  { transform: scale(1.16); filter: brightness(1.25); }
+  100% { transform: scale(1); }
+}
+.combina-pop { animation: combina-pop-kf .6s cubic-bezier(.2,.8,.3,1); }
+
+/* 10 — Avatares com gradiente próprio por colaborador */
+@utility avatar-grad {
+  color: #fff;
+  border: 2px solid rgb(255 255 255 / 0.22);
+  box-shadow: 0 0 16px rgb(0 0 0 / 0.35);
+  text-shadow: 0 1px 2px rgb(0 0 0 / 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  .alert-pulse, .shimmer, .champion-glow, .neon-flicker, .confetti-piece,
+  .medal-float, .combina-pop, .skeleton-neon { animation: none !important; }
+  .focus-dim, .focus-on { transition: none; }
+}
+
+/* ===== Acessibilidade e conforto de leitura =====
+   Tamanho do texto, alto contraste, foco visível e redução de animações.
+   Controlado em Configurações → Aparência (guardado no dispositivo). */
+
+:root { --app-text-scale: 100%; }
+html { font-size: var(--app-text-scale); }
+
+/* Foco visível e uniforme em todos os elementos interativos */
+:where(a, button, input, select, textarea, summary, [role="button"], [role="tab"], [role="menuitem"], [tabindex]):focus-visible {
+  outline: 3px solid color-mix(in oklab, var(--ring) 85%, transparent);
+  outline-offset: 2px;
+  border-radius: inherit;
+}
+
+/* Alvos de toque confortáveis no telemóvel */
+@media (pointer: coarse) {
+  :where(button, a[role="button"], [role="tab"], input[type="checkbox"], input[type="radio"]) {
+    min-height: 40px;
+  }
+  :where(input, select, textarea) { font-size: max(16px, 0.95rem); }
+}
+
+/* Tema claro: reforço de contraste (texto secundário, limites e superfícies) */
+:root[data-theme="light"] {
+  --foreground: oklch(0.21 0.02 265);
+  --muted-foreground: oklch(0.40 0.02 260);
+  --card-foreground: oklch(0.21 0.02 265);
+  --popover-foreground: oklch(0.21 0.02 265);
+  --border: oklch(0.21 0.02 265 / 20%);
+  --input: oklch(0.21 0.02 265 / 26%);
+  --primary: oklch(0.52 0.19 250);
+  --ring: oklch(0.48 0.19 250);
+  --success: oklch(0.52 0.15 152);
+  --warning: oklch(0.58 0.14 75);
+  --destructive: oklch(0.55 0.21 25);
+  --chart-1: oklch(0.52 0.15 152);
+  --chart-2: oklch(0.52 0.19 250);
+  --chart-3: oklch(0.58 0.14 75);
+  --chart-4: oklch(0.55 0.21 10);
+  --chart-5: oklch(0.52 0.19 305);
+}
+/* No tema claro o brilho néon reduz legibilidade — suavizamos. */
+:root[data-theme="light"] .neon-text { text-shadow: none; }
+:root[data-theme="light"] .kpi-neon { text-shadow: none; }
+:root[data-theme="light"] .glass-card {
+  background: color-mix(in oklab, var(--card) 92%, transparent);
+  border-color: color-mix(in oklab, var(--foreground) 16%, transparent);
+  box-shadow: 0 10px 26px -20px rgb(0 0 0 / 0.45);
+}
+:root[data-theme="light"] body::before { opacity: 0.28; }
+:root[data-theme="light"] .neon-badge { color: var(--foreground); }
+
+/* Alto contraste (aplica-se a qualquer tema) */
+:root[data-contrast="alto"] {
+  --border: color-mix(in oklab, var(--foreground) 45%, transparent);
+  --input: color-mix(in oklab, var(--foreground) 50%, transparent);
+  --muted-foreground: color-mix(in oklab, var(--foreground) 88%, transparent);
+}
+:root[data-contrast="alto"] body::before { opacity: 0.12; }
+:root[data-contrast="alto"] .glass-card {
+  background: var(--card);
+  backdrop-filter: none;
+  border-color: color-mix(in oklab, var(--foreground) 40%, transparent);
+}
+:root[data-contrast="alto"] .text-muted-foreground { color: var(--foreground); }
+:root[data-contrast="alto"] :where(.text-foreground\/70, .text-foreground\/60, .text-foreground\/50) { color: var(--foreground); }
+:root[data-contrast="alto"] :where(a, button):focus-visible { outline-width: 4px; }
+
+/* Redução de animações escolhida pelo utilizador */
+:root[data-motion="reduzido"] *,
+:root[data-motion="reduzido"] *::before,
+:root[data-motion="reduzido"] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}
